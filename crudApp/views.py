@@ -23,5 +23,10 @@ def delete_view(request,id):
 
 def update_view(request,id):
     emp=Employee.objects.get(id=id)
+    if request.method == 'POST':
+        form =Employee_form(request.POST,instance=emp)
+        if form.is_valid():
+            form.save()
+            return redirect('/employee_list')
     return render(request,'crudApp/update.html',{'employee':emp})
 
