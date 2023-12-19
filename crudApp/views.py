@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from crudApp.models import Employee
 from crudApp.forms import Employee_form
 
@@ -9,4 +9,9 @@ def retrieve_list(request):
 
 def create_view(request):
     form=Employee_form()
+    if request.method == 'POST':
+        form =Employee_form(request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('/employee_list')
     return render(request,'crudApp/create.html',{'form':form})
