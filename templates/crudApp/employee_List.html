@@ -1,0 +1,24 @@
+<html>
+    {% extends 'crudApp/base.html' %}
+
+    {% block  content %}
+    <h1>Employee Lists and their Details </h1>
+    <table>
+        <thead>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Employee Address</th>
+        </thead>
+        {% for emp in employee %}
+            <tr>
+                <td>{{emp.emp_no}}</td>
+                <td>{{emp.emp_name}}</td>
+                <td>{{emp.emp_salary}}</td>
+                <td>{{emp.emp_Address}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% endblock %}
+</html>
