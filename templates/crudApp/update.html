@@ -1,0 +1,16 @@
+<html>
+    {% extends 'crudApp/base.html' %}
+
+    {% block  content %}
+
+    <form action="" method="post">
+        Employee NO. <input type="text" name="emp_no" value="{{employee.emp_no}}">
+        Employee Name <input type="text" name="emp_name" value="{{employee.emp_name}}">
+        Employee Salary <input type="text" name="emp_salary" value="{{employee.emp_salary}}">
+        Employee Address <input type="text" name="emp_Address" value="{{employee.emp_Address}}">
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% endblock %}
+</html>

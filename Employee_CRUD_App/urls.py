@@ -23,4 +23,5 @@ urlpatterns = [
     path('employee_list',views.retrieve_list),
     path('add',views.create_view),
     path('delete/<id>',views.delete_view),
+    path('update/<id>',views.update_view),
 ]

@@ -21,3 +21,7 @@ def delete_view(request,id):
     emp.delete()
     return redirect('/employee_list')
 
+def update_view(request,id):
+    emp=Employee.objects.get(id=id)
+    return render(request,'crudApp/update.html',{'employee':emp})
+
