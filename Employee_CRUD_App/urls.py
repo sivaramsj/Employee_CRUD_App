@@ -21,4 +21,5 @@ from crudApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('employee_list',views.retrieve_list),
+    path('add',views.create_view),
 ]
