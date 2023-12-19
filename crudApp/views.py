@@ -13,5 +13,5 @@ def create_view(request):
         form =Employee_form(request.POST)
         if form.is_valid():
             form.save()
-            redirect('/employee_list')
+            return redirect('/employee_list')
     return render(request,'crudApp/create.html',{'form':form})
