@@ -15,3 +15,9 @@ def create_view(request):
             form.save()
             return redirect('/employee_list')
     return render(request,'crudApp/create.html',{'form':form})
+
+def delete_view(request,id):
+    emp=Employee.objects.get(id=id)
+    emp.delete()
+    return redirect('/employee_list')
+

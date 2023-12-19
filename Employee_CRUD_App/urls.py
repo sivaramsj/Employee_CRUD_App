@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('employee_list',views.retrieve_list),
     path('add',views.create_view),
+    path('delete/<id>',views.delete_view),
 ]
